@@ -1,0 +1,27 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        <% clientes.forEach(cliente => { %>
+            <li>
+                <%= cliente.nome %>
+                <a href="/clientes/<%= cliente.id %>/edit">Editar</a>
+                <form method="POST" action="/clientes/<%= cliente.id %>/delete">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/clientes/new">Novo Cliente</a>
+</body>
+</html>
+

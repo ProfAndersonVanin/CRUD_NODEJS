@@ -1,0 +1,4 @@
+Para iniciar:
+node app.js
+
+http://localhost:3000/clientes
